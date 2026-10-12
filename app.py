@@ -21,11 +21,15 @@ app.config.suppress_callback_exceptions = True
 
 # Load data from csv
 def load_data():
+    try:  
     # To do: Completar la función 
-    df = pd.read_csv("datos_energia.csv")
-    df["time"] = pd.to_datetime(df["time"])
-    df.set_index("time",inplace=True)
-    return df
+        df = pd.read_csv("datos_energia.csv")
+        df["time"] = pd.to_datetime(df["time"])
+        df.set_index("time",inplace=True)
+        return df
+    except FileNotFoundError:
+        print("Error, no se encontro el archivo en ruta '{filepath}' ")
+
 
 # Cargar datos
 data = load_data()
