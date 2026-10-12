@@ -30,6 +30,10 @@ def load_data():
     except FileNotFoundError:
         print("Error, no se encontro el archivo en ruta '{filepath}' ")
 
+#Otra funcion que nada hace
+def funcion_vacia():
+    return None
+
 
 # Cargar datos
 data = load_data()
