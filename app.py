@@ -28,7 +28,12 @@ def load_data():
         df.set_index("time",inplace=True)
         return df
     except FileNotFoundError:
-        print("Error, no se encontro el archivo en ruta '{filepath}' ")
+        print("Error, no se encontro el archivo en ruta ")
+        return None
+    except pd.errors.EmptyDataError:
+        print("Error, el archivo csv esta vacio.")
+        return None
+
 
 
 # Cargar datos
