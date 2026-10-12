@@ -35,6 +35,10 @@ def load_data():
         return None
 
 
+#Otra funcion que nada hace
+def funcion_vacia():
+    return None
+
 
 # Cargar datos
 data = load_data()
